@@ -1,0 +1,169 @@
+.mytasks {
+    padding: 20px 20px;
+
+    ul {
+
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: flex-start;
+        // align-items: flex-start;
+        // flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        grid-gap: 1rem;
+        list-style: none;
+        padding: 30px;
+        background-color: #110f1148;
+        width: 100%;
+        border-radius: 25px;
+
+        li {
+            position: relative;
+            background-color: #2b292b48;
+            padding: 20px;
+            width: 215px;
+            height: 215px;
+            border-radius: 25px;
+            transition: box-shadow 0.1s ease-in-out;
+
+            &:hover {
+                .mytasks__task__interaction__btn {
+                    opacity: 1;
+                }
+
+                box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 12px;
+            }
+
+            .mytasks__task__interaction__btn {
+                opacity: 0;
+                position: absolute;
+                top: 20px;
+                right: 10px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                transition: opacity 0.2s ease-in-out;
+
+                &:hover {
+                    img {
+                        filter: brightness(0.8);
+                    }
+                }
+
+                img {
+                    width: 22px;
+                    height: 22px;
+                    object-fit: contain;
+                    filter: brightness(1);
+                    transition: filter 0.2s ease-in-out;
+                }
+            }
+
+            .mytasks__task__title {
+                width: 100%;
+                font-size: 1.25rem;
+                padding-bottom: 5px;
+                font-weight: bold;
+                word-wrap: break-word;
+
+                h3 {
+                    margin: 0;
+                }
+            }
+
+            .mytasks__task__date {     
+                font-size: 0.7rem;
+               
+                p {
+                    margin: 0;
+                }
+            }
+
+            .mytasks__task__description {
+                overflow: auto;
+                margin-top: 12px;
+                width: 100%;
+                height: 30px;
+                font-size: 0.9rem;
+                word-wrap: break-word;
+
+                p {
+                    margin: 0;
+                }
+            }
+
+            .mytasks__task__dayleft {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                width: 100%;
+                padding: 3px 10px;
+                margin-top: 25px;
+                border-radius: 5px;
+                width: fit-content;
+                z-index: 1;
+                background-color: #2b292b;
+                user-select: none;
+                -webkit-user-select: none;
+
+                svg {
+                    width: 18px;
+                    height: auto;
+                }
+
+                span {
+                    margin-left: 2px;
+                    transform: translateY(1px);
+                    font-size: 0.66rem;
+                    font-style: italic;
+                }
+            }
+
+            .mytasks__task__progression {
+                width: 100%;
+                margin-top: 25px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                width: 100%;
+                height: 10px;
+
+                .mytasks__task__progression__bar {
+                    width: 100%;
+                    height: 5px;
+                    background-color: #2b292b;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    overflow: hidden;
+
+                    .mytasks__task__progression__bar__progress {
+                        height: 100%;
+                        background-color: #3457D5;
+                        border-radius: 10px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        transition: width 0.5s ease-in-out;
+                    }
+                }
+
+            }
+
+        }
+
+
+    }
+
+}
