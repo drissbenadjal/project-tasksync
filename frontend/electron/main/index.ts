@@ -53,6 +53,11 @@ async function createWindow() {
     height: 720,
     minHeight: 720,
     frame: false,
+    autoHideMenuBar: true, // mac
+    titleBarStyle: 'hidden', // mac
+    titleBarOverlay: { // mac
+      height: 35,
+    },
     webPreferences: {
       preload,
       nodeIntegration: true,

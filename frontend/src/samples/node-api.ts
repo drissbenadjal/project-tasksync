@@ -11,6 +11,11 @@ export const createFileCalendarConfig = (content: string) => {
   fs.writeFileSync('calendar_config.json', contentFormat, (err: any) => {
     if (err) throw err;
   });
+
+  //renvoyer le path d'ou le fichier a été créé
+  ///Users/drissbenadjal/Documents/Electron/project-tasksync/frontend/calendar_config.json
+  const path = 'Users/drissbenadjal/Documents/Electron/project-tasksync/frontend/calendar_config.json';
+  return path;
 }
 
 

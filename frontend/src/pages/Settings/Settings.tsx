@@ -106,7 +106,7 @@ export const SettingsPage = () => {
     setCurrentHendCalendar(hend);
   };
 
-  const exportCalendarSettings = () => {
+  const exportCalendarSettings = async () => {
     const zoom =
       getStorage("zoomCalendar") !== null &&
       getStorage("zoomCalendar") !== undefined &&
@@ -133,7 +133,13 @@ export const SettingsPage = () => {
         : "";
     const data = `zoom:${zoom},hstart:${hstart},hend:${hend},urlIcal:${urlIcal}`;
 
-    createFileCalendarConfig(data);
+    const path = await createFileCalendarConfig(data);
+    const link = document.createElement("a");
+    link.href = path;
+    link.download = "calendarConfig.json";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const importCalendarSettings = () => {
